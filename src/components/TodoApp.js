@@ -18,7 +18,7 @@ const TodoApp = () => {
   return (
     <div className="container flex flex-col items-center content-center ">
       <TodoForm addTodoHandler={addTodoHandler} />
-      <TodoList />
+      <TodoList todos={todos} />
     </div>
   );
 };
