@@ -1,23 +1,29 @@
 import { useState } from "react";
 
-const TodoForm = () => {
-  const [todo, setTodo] = useState("");
+const TodoForm = (props) => {
+  const [input, setInput] = useState("");
 
   const changeHandler = (e) => {
-    setTodo(e.target.value);
-    console.log("change");
+    setInput(e.target.value);
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("submit");
+
+    if (!input) {
+      alert("Please enter a text first!");
+      return;
+    }
+
+    props.addTodoHandler(input);
+    setInput("");
   };
 
   return (
     <form onSubmit={submitHandler} className="container w-fit">
       <input
         onChange={changeHandler}
-        value={todo}
+        value={input}
         type="text"
         className="p-2"
       />
