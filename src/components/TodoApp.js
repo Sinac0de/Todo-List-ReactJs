@@ -8,7 +8,7 @@ const TodoApp = () => {
 
   const addTodoHandler = (input) => {
     const newTodo = {
-      id: Math.floor(Math.random() * 1000),
+      id: Date.now(),
       text: input,
       isCompleted: false,
     };
