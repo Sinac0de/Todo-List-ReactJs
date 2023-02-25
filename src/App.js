@@ -1,5 +1,12 @@
+import TodoApp from "./components/TodoApp";
+
 const App = () => {
-  return <></>;
+  return (
+    <div className="flex flex-col items-center">
+      <h1 className="m-2 text-2xl">TodoList App</h1>
+      <TodoApp />
+    </div>
+  );
 };
 
 export default App;
