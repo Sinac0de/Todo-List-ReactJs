@@ -20,7 +20,10 @@ const TodoForm = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler} className="container w-fit">
+    <form
+      onSubmit={submitHandler}
+      className="border border-sky-600 flex justify-between"
+    >
       <input
         onChange={changeHandler}
         value={input}

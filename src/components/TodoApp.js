@@ -15,10 +15,19 @@ const TodoApp = () => {
     setTodos([...todos, newTodo]);
   };
 
+  const completeTodo = (id) => {
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
+    const todo = { ...todos[todoIndex] }; //clone todo item
+    todo.isCompleted = !todo.isCompleted; // toggle the completed property
+    const updatedTodos = [...todos]; //clone todos
+    updatedTodos[todoIndex] = todo;
+    setTodos(updatedTodos);
+  };
+
   return (
     <div className="container flex flex-col items-center content-center ">
       <TodoForm addTodoHandler={addTodoHandler} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onComplete={completeTodo} />
     </div>
   );
 };
