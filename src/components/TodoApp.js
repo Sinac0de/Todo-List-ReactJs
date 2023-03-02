@@ -24,10 +24,15 @@ const TodoApp = () => {
     setTodos(updatedTodos);
   };
 
+  const deleteTodo = (id) => {
+    const updatedTodo = [...todos].filter((item) => item.id != id);
+    setTodos(updatedTodo);
+  };
+
   return (
     <div className="container flex flex-col items-center content-center ">
       <TodoForm addTodoHandler={addTodoHandler} />
-      <TodoList todos={todos} onComplete={completeTodo} />
+      <TodoList todos={todos} onComplete={completeTodo} onDelete={deleteTodo} />
     </div>
   );
 };
