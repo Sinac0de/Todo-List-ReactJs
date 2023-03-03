@@ -3,7 +3,11 @@ import { TiTick, TiTrash, TiPencil, TiTickOutline } from "react-icons/ti";
 
 const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
   return (
-    <div className="flex w-96 border rounded-md items-center justify-between m-2 p-2">
+    <div
+      className={`flex w-96 border rounded-md items-center justify-between m-2 p-2 shadow ${
+        todo.isCompleted ? "translate-x-3 transition-all" : "transition-all"
+      }`}
+    >
       <p className={todo.isCompleted ? "line-through opacity-40 " : ""}>
         {todo.text}
       </p>
