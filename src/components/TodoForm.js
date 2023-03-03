@@ -26,19 +26,19 @@ const TodoForm = (props) => {
   };
 
   return (
-    <form
-      onSubmit={submitHandler}
-      className="border border-slate-800 flex justify-between "
-    >
+    <form onSubmit={submitHandler} className="flex justify-between gap-1 w-96">
       <input
         onChange={changeHandler}
         value={input}
         type="text"
-        className="p-2"
+        className="px-3 py-1 w-full border border-slate-300 rounded-md text-sm focus:outline-none focus:border-violet-700 focus:ring-1 focus:ring-violet-700"
         placeholder={props.edit ? "Update todo..." : "Add todo..."}
         ref={inputRef}
       />
-      <button type="submit" className="bg-slate-300 p-2">
+      <button
+        type="submit"
+        className=" bg-violet-700 text-white px-3 py-1 rounded-md"
+      >
         {props.edit ? "Update" : "Add"}
       </button>
     </form>
