@@ -38,7 +38,7 @@ const TodoApp = () => {
   };
 
   return (
-    <div className="flex flex-col items-center content-center w-6/12 p-4 rounded-lg ">
+    <div className=" w-6/12 p-4 rounded-lg flex flex-col items-center content-center ">
       <TodoForm submitTodo={addTodo} />
       <TodoList
         todos={todos}
