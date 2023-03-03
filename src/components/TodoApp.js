@@ -6,7 +6,7 @@ import TodoList from "./TodoList";
 const TodoApp = () => {
   const [todos, setTodos] = useState([]);
 
-  const addTodoHandler = (input) => {
+  const addTodo = (input) => {
     const newTodo = {
       id: Date.now(),
       text: input,
@@ -24,15 +24,28 @@ const TodoApp = () => {
     setTodos(updatedTodos);
   };
 
-  const deleteTodo = (id) => {
-    const updatedTodo = [...todos].filter((item) => item.id != id);
+  const removeTodo = (id) => {
+    const updatedTodo = [...todos].filter((item) => item.id !== id);
     setTodos(updatedTodo);
   };
 
+  const updateTodo = (id, newValue) => {
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
+    const todo = { ...todos[todoIndex], text: newValue };
+    const updatedTodos = [...todos];
+    updatedTodos[todoIndex] = todo;
+    setTodos(updatedTodos);
+  };
+
   return (
-    <div className="container flex flex-col items-center content-center ">
-      <TodoForm addTodoHandler={addTodoHandler} />
-      <TodoList todos={todos} onComplete={completeTodo} onDelete={deleteTodo} />
+    <div className="flex flex-col items-center content-center w-6/12 p-2 bg-white border rounded-lg ">
+      <TodoForm submitTodo={addTodo} />
+      <TodoList
+        todos={todos}
+        onComplete={completeTodo}
+        onDelete={removeTodo}
+        onUpdateTodo={updateTodo}
+      />
     </div>
   );
 };
