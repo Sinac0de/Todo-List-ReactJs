@@ -11,7 +11,7 @@ const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
       <p
         className={`${
           todo.isCompleted ? "line-through opacity-40 " : ""
-        } font-bold`}
+        } font-semibold`}
       >
         {todo.text}
       </p>
