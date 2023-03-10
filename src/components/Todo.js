@@ -8,15 +8,24 @@ const Todo = ({ todo, onComplete, onDelete, onEdit }) => {
         todo.isCompleted ? "translate-x-3 transition-all" : "transition-all"
       }`}
     >
-      <p className={todo.isCompleted ? "line-through opacity-40 " : ""}>
+      <p
+        className={`${
+          todo.isCompleted ? "line-through opacity-40 " : ""
+        } font-bold`}
+      >
         {todo.text}
       </p>
       <div className="flex gap-4">
-        <button onClick={onEdit}>
-          <IconContext.Provider value={{ className: "text-xl text-blue-400" }}>
-            <TiPencil />
-          </IconContext.Provider>
-        </button>
+        {!todo.isCompleted && (
+          <button onClick={onEdit}>
+            <IconContext.Provider
+              value={{ className: "text-xl text-blue-400" }}
+            >
+              <TiPencil />
+            </IconContext.Provider>
+          </button>
+        )}
+
         <button onClick={onDelete}>
           <IconContext.Provider value={{ className: "text-xl text-red-400" }}>
             <TiTrash />
