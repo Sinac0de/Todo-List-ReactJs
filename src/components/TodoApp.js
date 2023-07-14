@@ -66,8 +66,8 @@ const TodoApp = () => {
   };
 
   return (
-    <div className="w-6/12 p-4 rounded-lg flex flex-col items-center content-center ">
-      <div>
+    <div className="w-full md:max-w-xl p-4 rounded-lg flex flex-col items-center content-center ">
+      <div className="w-full">
         <TodoForm submitTodo={addTodo} />
         {todos.length ? (
           <FilterTodos

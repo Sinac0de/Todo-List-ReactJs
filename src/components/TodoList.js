@@ -12,7 +12,7 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
 
   const renderTodo = () => {
     if (todos.length === 0)
-      return <div className="font-semibold">Add some todos :)</div>;
+      return <div className="font-semibold text-center">Add some todos :)</div>;
     return todos.map((todo) => {
       return (
         <Todo
@@ -27,7 +27,7 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
   };
 
   return (
-    <div className="mt-2">
+    <div className="mt-2 w-full">
       {edit.id ? <TodoForm submitTodo={editTodo} edit={edit} /> : renderTodo()}
     </div>
   );
