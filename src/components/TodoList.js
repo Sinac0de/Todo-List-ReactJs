@@ -12,7 +12,11 @@ const TodoList = ({ todos, onComplete, onDelete, onUpdateTodo }) => {
 
   const renderTodo = () => {
     if (todos.length === 0)
-      return <div className="font-semibold text-center">Add some todos :)</div>;
+      return (
+        <div className="font-semibold text-center text-white">
+          Add some todos :)
+        </div>
+      );
     return todos.map((todo) => {
       return (
         <Todo
