@@ -5,6 +5,7 @@ const TodoForm = (props) => {
 
   const inputRef = useRef(null);
 
+  //focus on the input element when
   useEffect(() => {
     inputRef.current.focus();
   }, []);
