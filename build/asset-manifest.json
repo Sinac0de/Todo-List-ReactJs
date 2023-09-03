@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Todo-List-ReactJs/static/css/main.853b8e33.css",
+    "main.js": "/Todo-List-ReactJs/static/js/main.5fda835d.js",
+    "static/media/background.jpg": "/Todo-List-ReactJs/static/media/background.179c9fa974dc168bf518.jpg",
+    "index.html": "/Todo-List-ReactJs/index.html",
+    "main.853b8e33.css.map": "/Todo-List-ReactJs/static/css/main.853b8e33.css.map",
+    "main.5fda835d.js.map": "/Todo-List-ReactJs/static/js/main.5fda835d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.853b8e33.css",
+    "static/js/main.5fda835d.js"
+  ]
+}
